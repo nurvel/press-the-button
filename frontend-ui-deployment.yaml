@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: press-the-button-deployment
+  labels:
+    app: frontend-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend-ui
+  template:
+    metadata:
+      labels:
+        app: frontend-ui
+    spec:
+      containers:
+      - name: frontend-ui
+        image: velipekkanurmi/press-the-button-frontend-ui:latest
+        ports:
+        - containerPort: 80
+#        env:
+#        - name: TEMPLATEKEY
+#          value: 
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: press-the-button-ui
+spec:
+  type: NodePort
+  selector:
+    app: frontend-ui
+  ports:
+    - protocol: TCP
+      port: 80
+#      targetPort: 80
+      nodePort: 31000
+      name: http
