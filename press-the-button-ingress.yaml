@@ -1,0 +1,12 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: press-the-button-ingress
+spec:
+  rules:
+  - host: nurvel.usw1.kubesail.io
+    http:
+      paths:
+      - backend:
+          serviceName: press-the-button-ui
+          servicePort: 80
