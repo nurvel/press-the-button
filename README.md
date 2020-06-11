@@ -1,7 +1,12 @@
 ### DevOps-stuff
 
-Stuff
 
+| env   | db                   |  |
+| ----- | -------------------- | ------ |
+| prod  | freemysqlhosting.net |  |
+| local | H2                   |  |
+
+Stuff
 - Frontend:
     - React, ts
     - Redux, Rxjs
