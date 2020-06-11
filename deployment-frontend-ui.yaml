@@ -17,6 +17,7 @@ spec:
       containers:
       - name: frontend-ui
         image: velipekkanurmi/press-the-button-frontend-ui:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
 ---
@@ -25,7 +26,7 @@ kind: Service
 metadata:
   name: press-the-button-ui
 spec:
-  type: NodePort
+  type: NodePort # loadBalacer == default service provider loadbalancer in use
   selector:
     app: frontend-ui
   ports:

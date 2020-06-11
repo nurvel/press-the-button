@@ -4,7 +4,16 @@ function App() {
   const [presses, setPresses] = useState(0);
 
   const handlePress = () => {
-    setPresses(presses + 1);
+    let number = fetch("/api/v1/count")
+      .then((res) => res.json())
+      .then((json) => {
+        console.log("response json", json);
+        setPresses(json);
+      })
+      .catch((err) => {
+        console.log(err);
+        setPresses(presses + 1);
+      });
   };
 
   return (
