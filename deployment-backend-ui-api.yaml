@@ -15,7 +15,7 @@ spec:
         app: backend-ui-api
     spec:
       containers:
-      - name: backend-ui-api
+      - name: backend-ui-api-container
         image: velipekkanurmi/press-the-button-backend-api:latest
         imagePullPolicy: Always
         ports:
@@ -32,4 +32,4 @@ spec:
   ports:
     - protocol: TCP
       port: 8080
-      targetPort: http
+      targetPort: 8080
