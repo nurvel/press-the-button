@@ -1,12 +1,13 @@
 ### DevOps-stuff
 
+Monorepo to experiment with kubernetes and CI/CD stuff. Nothing fancy application wise.
 
-| env   | db                   |  |
-| ----- | -------------------- | ------ |
-| prod  | freemysqlhosting.net |  |
-| local | H2                   |  |
+Things will show up at [http://nurvel.usw1.kubesail.io/](http://nurvel.usw1.kubesail.io/).
 
-Stuff
+
+### Jibrish
+
+Stuff to experiment with
 - Frontend:
     - React, ts
     - Redux, Rxjs
@@ -30,18 +31,15 @@ Stuff
     - UI: Selenium, RobotFramework
     - Load
 
-###
-
 https://medium.com/@shakyShane/lets-talk-about-docker-artifacts-27454560384f
 docker run -p 8080:80 velipekkanurmi/press-the-button-frontend-ui
 
 ### Kubernetes
 
 create Deployment & Service
+```
 kubectl apply -f frontend-ui.yaml
-
-
-
+```
 
 ```
 $ kubectl get service
