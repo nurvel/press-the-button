@@ -15,11 +15,18 @@ spec:
         app: frontend-ui
     spec:
       containers:
-      - name: frontend-ui
-        image: velipekkanurmi/press-the-button-frontend-ui:latest
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 80
+        - name: frontend-ui
+          image: velipekkanurmi/press-the-button-frontend-ui:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 10m
+              memory: 128Mi
+            limits:
+              cpu: 100m
+              memory: 150Mi
 ---
 apiVersion: v1
 kind: Service
